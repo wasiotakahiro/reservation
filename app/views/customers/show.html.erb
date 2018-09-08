@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<p>予約完了しました</p>
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @customer.password %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @customer.content %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @customer.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
