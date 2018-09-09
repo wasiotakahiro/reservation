@@ -1,0 +1,23 @@
+<%= form_with(model: @customer, local: true ,url: choose_new ) do |form| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @customer.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="customer_name">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="customer_mail">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to "ブログ一覧画面にもどる", cutomers_path %>
