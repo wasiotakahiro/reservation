@@ -1,10 +1,10 @@
-<%= form_with(model: @customer, local: true ,url: choose_new ) do |form| %>
-  <% if @customer.errors.any? %>
+<%= form_with(model: @reservation, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if @reservation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @customer.errors.count %>件のエラーがあります。</h2>
+      <h2><%= @reservation.errors.count %>件のエラーがあります。</h2>
       <ul>
 
-      <% @customer.errors.full_messages.each do |msg| %>
+      <% @reservation.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -20,4 +20,4 @@
   </div>
   <%= form.submit %>
 <% end %>
-<%= link_to "ブログ一覧画面にもどる", cutomers_path %>
+<%= link_to "adminはこちら", reservations_path %>

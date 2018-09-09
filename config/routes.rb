@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   passwords:     'customers/passwords',
   registrations: 'customers/registrations'
 }
+
+resources :customers do
+    collection do
+      post :confirm
+    end
+  end
   devise_for :admins
   resources :reservations do
     collection do

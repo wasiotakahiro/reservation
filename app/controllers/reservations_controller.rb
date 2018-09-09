@@ -6,13 +6,18 @@ class ReservationsController < ApplicationController
  end
 
   def new
+    if params[:back]
+      @reservation = Reservation.new(reservations_params)
+    else
+      @reservation = Reservation.new
+    end
   end
 
  def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id # login user がblog を投稿
     if @reservation.save
-      redirect_to reservations_path, notice: "ブログを作成しました！"
+      redirect_to reservations_path, notice: "予約を作成しました！"
       @inform = current_user.email
       ContactMailer.send_mail(@inform).deliver
     else
