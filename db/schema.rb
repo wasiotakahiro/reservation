@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20180909070406) do
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.integer "admin_id"
+    t.integer "customer_id"
+    t.string "email"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
